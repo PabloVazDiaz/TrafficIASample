@@ -7,11 +7,11 @@ public class NavigationController : MonoBehaviour
     public float movementSpeed;
     public float stopDistance;
     public float rotationSpeed;
-    public Transform destination;
+    public Vector3 destination;
+    public bool reachedDestination = true;
 
     private Vector3 animVelocity;
     private Vector3 lastPosition;
-    private bool reachedDestination;
     private Animator animator;
 
 
@@ -19,15 +19,16 @@ public class NavigationController : MonoBehaviour
     void Start()
     {
         lastPosition = transform.position;
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+        movementSpeed += Random.Range(-movementSpeed * 0.1f, movementSpeed * 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != destination.position)
+        if (transform.position != destination)
         {
-            Vector3 destinationDirection = destination.position - transform.position;
+            Vector3 destinationDirection = destination - transform.position;
             destinationDirection.y = 0;
             float destinationDistance = destinationDirection.magnitude;
 
@@ -59,7 +60,7 @@ public class NavigationController : MonoBehaviour
     }
 
 
-    public void setDestination(Transform dest)
+    public void setDestination(Vector3 dest)
     {
         destination = dest;
         reachedDestination = false;

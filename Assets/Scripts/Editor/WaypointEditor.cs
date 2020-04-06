@@ -45,6 +45,13 @@ public class WaypointEditor
             Gizmos.DrawLine(offset, offsetTo);
         }
 
-
+        if (waypoint.branches != null)
+        {
+            Gizmos.color = Color.blue;
+            foreach (Waypoint branch in waypoint.branches)
+            {
+                Gizmos.DrawLine(waypoint.transform.position, branch.transform.position);
+            }
+        }
     }
 }

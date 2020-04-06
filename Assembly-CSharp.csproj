@@ -64,7 +64,9 @@
   <ItemGroup>
     <Compile Include="Assets\NatureManufacture Assets - Trials Not Full Resolution\NatureManufacture Wind\NM_Wind.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\NavigationController.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\NPCSpawner.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\Waypoint.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviours\WaypointNavigator.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
